@@ -1,0 +1,42 @@
+#+AUTHOR: phdenzel
+#+TITLE: phd-ark-tabline.el
+#+DATE: 2025-02-13 Do
+#+OPTIONS: author:nil title:t date:nil timestamp:nil toc:nil num:nil \n:nil
+
+
+  This is my customization of the Emacs ~tab-line~.
+
+  It provides a minor-mode for toggling the ~phd-ark-tabline~ which
+  includes padded and truncated tab names and some nicer graphics
+  (opposed to the IMHO ugly default).
+
+
+* Installation
+
+  Download this git repository, e.g. to your home directory.  In your
+  ~init.el~ (or equivalent Emacs startup-file), use
+
+  #+begin_src emacs-lisp
+    (add-to-list 'load-path "~/phd-ark-tabline/")
+    (require 'phd-ark-tabline)
+    (phd-ark-tabline-mode 1)
+    (global-set-key (kbd "C-x _") 'phd-ark-tabline-mode)
+  #+end_src
+
+  or in case you're using ~use-package~
+
+  #+begin_src emacs-lisp
+    (use-package phd-ark-tabline
+      :ensure nil
+      :load-path "~/phd-ark-tabline/"
+      :hook (after-init . phd-ark-tabline-mode)
+      :bind (("C-x _" . phd-ark-tabline-mode)))
+  #+end_src
+
+  
+* Configuration
+
+  ~phd-ark-tabline~ is simply overwriting the built-in ~tab-line~ configuration.
+  This means for theming the ~phd-ark-tabline~ simply set the faces for ~tab-line~.
+  If you want to revert to the default ~tab-line~ configuration, use ~M-x phd-ark-tabline-mode~
+  or ~M-x phd-ark-tl/reset-default~.
