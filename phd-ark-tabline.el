@@ -104,17 +104,17 @@ The buffer name is centred and truncated if its length falls outside of limits
 	tab-line-tab-name-function #'phd-ark-tabline-tab-name-buffer
 	tab-line-tabs-function #'phd-ark-tabline-tabs-window-buffers
 	tab-line-right-button (propertize (if (char-displayable-p ?▶) " ▶ " " > ")
-					  'face 'tab-line-tab-face
+					  'face 'tab-line-tab
                                           'keymap tab-line-right-map
                                           'mouse-face 'tab-line-highlight
                                           'help-echo "Click to scroll right")
 	tab-line-left-button (propertize (if (char-displayable-p ?◀) " ◀ " " < ")
-					 'face 'tab-line-tab-face
+					 'face 'tab-line-tab
 					 'keymap tab-line-left-map
 					 'mouse-face 'tab-line-highlight
 					 'help-echo "Click to scroll left")
 	tab-line-close-button (propertize (if (char-displayable-p ?×) " × " " x ")
-					  'face 'tab-line-tab-face
+					  'face 'tab-line-tab
                                           'keymap tab-line-tab-close-map
                                           'mouse-face 'tab-line-close-highlight
                                           'help-echo "Click to close tab")))
